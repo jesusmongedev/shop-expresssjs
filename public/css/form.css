@@ -1,0 +1,22 @@
+.form {
+    margin-top: 2rem;
+    display: grid;
+    place-items: center;
+}
+.form-label {
+    margin-bottom: 0.5rem;
+}
+
+button {
+    padding: 0.5rem 1rem;
+    border-radius: var(--bd-radius);
+    background-color: white;
+    border-color: var(--primary-color);
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+}
+button:active, button:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
