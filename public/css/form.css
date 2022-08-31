@@ -1,20 +1,34 @@
 .form {
+    align-self: flex-start;
     margin-top: 2rem;
-    display: grid;
-    place-items: center;
 }
-.form-label {
+h3 {
     margin-bottom: 0.5rem;
+}
+
+.input-container {
+    display: flex;
+}
+
+input {
+    outline: none;
+    border-top-left-radius: var(--bd-radius);
+    border-bottom-left-radius: var(--bd-radius);
+    padding: 0.5rem 1rem;
+    border-right: 0;
 }
 
 button {
     padding: 0.5rem 1rem;
-    border-radius: var(--bd-radius);
+    border-top-right-radius: var(--bd-radius);
+    border-bottom-right-radius: var(--bd-radius);
     background-color: white;
-    border-color: var(--primary-color);
+    /* border-color: var(--primary-color); */
     cursor: pointer;
     font-family: inherit;
     font-weight: bold;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
 }
 button:active, button:hover {
     background-color: var(--primary-color);

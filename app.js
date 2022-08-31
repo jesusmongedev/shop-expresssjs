@@ -1,23 +1,28 @@
-const express = require('express')
+const express = require('express');
+const morgan = require('morgan');
+
 
 const AdminRoutes = require('./routes/admin')
 const UserRoutes = require('./routes/shop')
+const NotFound = require('./controllers/NotFound.controller')
 
-const port = 8080
 const app = express()
+app.set('PORT', process.env.PORT || 8080)
 
+// Middleware
+app.use(morgan('dev'))
 app.use(express.json());       // to support JSON-encoded bodies
 app.use(express.urlencoded({extended: false})); // to support URL-encoded bodies
 app.use(express.static('public'))
+
+// Template engine
+app.set('view engine', 'ejs')
+
 
 app.use('/admin', AdminRoutes)
 
 app.use(UserRoutes)
 
-app.use((req, res) => {
-  res.status(400).sendFile('/views/page-not-found.html', { root: '.' })
-})
+app.use(NotFound.getNotFound)
 
-app.listen(port, () =>
-  console.log(`Server running on http://localhost:${port}`)
-)
+module.exports = app;

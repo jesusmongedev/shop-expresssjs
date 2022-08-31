@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= pageTitle %>
+    </title>
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+    <header>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-list__item"><a href="/" class="<%= isShopActive ? 'active' : '' %> ">Shop</a></li>
+                <li class="nav-list__item"><a href="/admin/add-product">Add product</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <h1>My products</h1>
+        <% if (products?.length> 0) { %>
+            <!-- TODO: create card and styles to render products  -->
+            <section class="card-container">
+                <% products.map(({ title })=> { %>
+                    <article class="card">
+                        <h2 class="card-title">
+                            <%= title %>
+                        </h2>
+                        <figure class="img-container">
+                            <img src="https://i.pinimg.com/736x/93/49/db/9349db88426f7e5a9a7fbe45fa79e480.jpg"
+                                alt="Trulli" style="width:100%">
+                        </figure>
+                        <p class="card-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+                            esse dolorem illo est quas odit obcaecati ab magni, eligendi cupiditate ex voluptatem
+                            explicabo officiis facilis vel, illum possimus corporis consequatur.</p>
+                    </article>
+
+                    <% }) %>
+            </section>
+            <% } else { %>
+                <h2>No products availables</h2>
+                <% } %>
+    </main>
+
+    <!--===== Footer =====-->
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="header__logo">
+                Ecua<span class="header-logo--light">Store</span>
+            </p>
+            <p class="footer-description">Made with 🧡 by Jesús 🇪🇨.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

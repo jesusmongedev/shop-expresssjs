@@ -2,8 +2,9 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.sendFile('/views/shop.html', {root: '.'});
-});
+const ProductsController = require('./../controllers/Products.controller')
+
+
+router.get('/', ProductsController.getProducts);
 
 module.exports = router;
