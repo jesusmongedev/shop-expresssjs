@@ -1,0 +1,30 @@
+<%- include('../includes/head.ejs') %>
+<%- include('../includes/navigation.ejs') %>
+
+<h1>My products</h1>
+<% if (products?.length> 0) { %>
+<!-- TODO: create card and styles to render products  -->
+<section class="card-container">
+  <% products.map(({ title })=> { %>
+  <article class="card">
+    <h2 class="card-title">
+      <%= title %>
+    </h2>
+    <figure class="img-container">
+      <img src="https://i.pinimg.com/736x/93/49/db/9349db88426f7e5a9a7fbe45fa79e480.jpg" alt="Trulli" style="width:100%">
+    </figure>
+    <p class="card-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+      esse dolorem illo est quas odit obcaecati ab magni, eligendi cupiditate ex voluptatem
+      explicabo officiis facilis vel, illum possimus corporis consequatur.</p>
+    <button class="btn primary">Add product</button>
+  </article>
+
+  <% }) %>
+</section>
+<% } else { %>
+<h2>No products availables</h2>
+<% } %>
+
+<!--===== Footer =====-->
+<%- include('../includes/footer.ejs') %>
+<%- include('../includes/end.ejs') %>

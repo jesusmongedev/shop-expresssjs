@@ -1,29 +1,25 @@
 .form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
     align-self: flex-start;
     margin-top: 2rem;
 }
+
 h3 {
     margin-bottom: 0.5rem;
 }
 
-.input-container {
-    display: flex;
-}
 
-input {
+input, textarea {
     outline: none;
-    border-top-left-radius: var(--bd-radius);
-    border-bottom-left-radius: var(--bd-radius);
+    border-radius: var(--bd-radius);
     padding: 0.5rem 1rem;
-    border-right: 0;
 }
 
 button {
     padding: 0.5rem 1rem;
-    border-top-right-radius: var(--bd-radius);
-    border-bottom-right-radius: var(--bd-radius);
-    background-color: white;
-    /* border-color: var(--primary-color); */
+    border-radius: var(--bd-radius);
     cursor: pointer;
     font-family: inherit;
     font-weight: bold;

@@ -11,8 +11,11 @@ const getProductsFromFile = (cb) => {
 }
 
 module.exports = class Product {
-  constructor(t) {
-    this.title = t
+  constructor(title, imageUrl, price, description) {
+    this.title = title
+    this.imageUrl = imageUrl
+    this.price = price
+    this.description = description
   }
 
   save() {
@@ -20,8 +23,8 @@ module.exports = class Product {
       products.push(this)
 
       fs.writeFile(p, JSON.stringify(products), (err) => {
-          console.error('err', err)
-          throw new Error('Cannnot write file');
+        console.error('err', err)
+        throw new Error('Cannnot write file')
       })
     })
   }

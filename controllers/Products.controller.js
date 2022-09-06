@@ -1,25 +1,22 @@
 const Product = require('./../models/Product.model')
 
-exports.getProducts = (req, res) => {
+// User Controllers
+exports.getHome = (_, res) => {
   Product.fetchAll((products) => {
-    console.log('products', products)
-    res.render('shop', { pageTitle: 'Home Page', isShopActive: true, products })
+    res.render('shop/index', {
+      pageTitle: 'Shop',
+      path: '/',
+      products,
+    })
   })
 }
 
-exports.getAddProducts = (req, res) => {
-  res.render('add-products', {
-    pageTitle: 'Add Products Page',
-    isProductActive: true,
+exports.getProducts = (_, res) => {
+  Product.fetchAll((products) => {
+    res.render('shop/product-list', {
+      pageTitle: 'Products',
+      path: '/products',
+      products,
+    })
   })
-}
-
-exports.postAddProduct = (req, res) => {
-  const { title } = req.body
-
-  const product = new Product(title)
-
-  product.save()
-
-  res.redirect('/')
 }

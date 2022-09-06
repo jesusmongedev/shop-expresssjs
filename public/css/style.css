@@ -3,6 +3,8 @@
     --primary-color: #1b4d89;
     --secondary-color: #f9e45b;
     --complementary-color: #6db784;
+    --dark-text-color: #121212;
+    --light-text-color: #ffff;
     /* others */
     --bd-radius: 20px;
 }
@@ -25,6 +27,25 @@ a {
 }
 
 h1 { margin-bottom: 2rem; }
+
+.btn {
+    padding: 0.5rem 0;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: opacity ease 1s;
+}
+
+.btn:hover {
+   background-color: #ffe225;
+}
+
+.primary {
+    background-color: var(--secondary-color);
+    color: var(--dark-text-color);
+}
 
 .nav {
     padding: 1.5rem 2rem;
